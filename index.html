@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Prompt Injection Red Team Test Suite</title>
+  <style>
+    body { font-family: monospace; max-width: 800px; margin: 40px auto; padding: 0 20px; }
+    h1 { border-bottom: 2px solid #333; }
+    ul li { margin: 8px 0; }
+    .label { font-weight: bold; display: inline-block; width: 200px; }
+    .vector { color: #555; }
+  </style>
+</head>
+<body>
+  <h1>Prompt Injection Red Team Test Suite</h1>
+  <p>Static HTML pages demonstrating common prompt injection vectors for testing AI web-content processors.</p>
+
+  <h2>Test Cases</h2>
+  <ul>
+    <li><span class="label">01-visible-text.html</span> <span class="vector">— Direct visible in-page injection</span></li>
+    <li><span class="label">02-hidden-text.html</span> <span class="vector">— CSS-hidden text (zero font-size, opacity:0, off-screen)</span></li>
+    <li><span class="label">03-html-comments.html</span> <span class="vector">— Injection inside HTML comments</span></li>
+    <li><span class="label">04-meta-tags.html</span> <span class="vector">— Injection via &lt;meta&gt; description / keywords</span></li>
+    <li><span class="label">05-alt-text.html</span> <span class="vector">— Injection via image alt attributes</span></li>
+    <li><span class="label">06-structured-data.html</span> <span class="vector">— Injection inside JSON-LD structured data</span></li>
+    <li><span class="label">07-aria-labels.html</span> <span class="vector">— Injection via ARIA and title attributes</span></li>
+    <li><span class="label">08-encoded.html</span> <span class="vector">— HTML-entity and Unicode obfuscation</span></li>
+    <li><span class="label">09-css-content.html</span> <span class="vector">— Injection via CSS ::before/::after content property</span></li>
+    <li><span class="label">10-iframe-nested.html</span> <span class="vector">— Cross-frame / nested document injection</span></li>
+  </ul>
+
+  <h2>Usage</h2>
+  <p>Point a browser-rendering AI agent or web-scraping LLM pipeline at each page and observe whether the injected instructions influence the model's output.</p>
+  <p>Each file contains a clearly marked <em>visible</em> section (benign content) and an <em>injected</em> section (adversarial payload), so results can be compared against a ground-truth baseline.</p>
+</body>
+</html>
